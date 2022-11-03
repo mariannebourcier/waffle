@@ -3,7 +3,7 @@ import { boardDefault } from './helpers/Words'
 import Letter from './Letter';
 
 export default function Board() {
-  const [board, setBoard] = useState(boardDefault);
+  //const [board, setBoard] = useState(boardDefault);
 
   return (
     <div className="board">
