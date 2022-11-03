@@ -4,8 +4,8 @@ import { AppContext } from '../App';
 export default function Letter({ letterPosition, attemptValue }) {
   const { board } = useContext(AppContext)
   const letter = board[attemptValue][letterPosition];
-  
+
   return (
-    <div className="letter"></div>
+    <div className="letter">{letter}</div>
   )
 }
