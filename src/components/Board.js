@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { boardDefault } from './helpers/Words'
 import Letter from './Letter';
+import '../styles/board.css';
 
 export default function Board() {
   //const [board, setBoard] = useState(boardDefault);
