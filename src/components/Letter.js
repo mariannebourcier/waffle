@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Letter({ letterPosition, attemptValue }) {
   return (
-    <div></div>
+    <div className="letter">Letter</div>
   )
 }
