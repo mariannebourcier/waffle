@@ -15,8 +15,10 @@ export default function App() {
         <h1>Waffle</h1>
       </nav>
       <AppContext.Provider value={{ board, setBoard }}>
+      <div className='center'>
       <Board />
       <Keyboard />
+      </div>
       </AppContext.Provider>
       
     </div>
