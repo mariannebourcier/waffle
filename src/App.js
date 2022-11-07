@@ -9,18 +9,23 @@ export const AppContext = createContext();
 
 export default function App() {
   const [board, setBoard] = useState(boardDefault);
+  const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0 })
+
   return (
     <div className="App">
       <nav>
         <h1>Waffle</h1>
       </nav>
-      <AppContext.Provider value={{ board, setBoard }}>
-      <div className='center'>
+      <AppContext.Provider value={{
+        board,
+        setBoard,
+        currentAttempt,
+        setCurrentAttempt
+         }}>
       <Board />
       <Keyboard />
-      </div>
-      </AppContext.Provider>
-      
+    
+      </AppContext.Provider> 
     </div>
   );
 }
