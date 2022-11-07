@@ -19,11 +19,11 @@ export default function Keyboard() {
         })}
       </div>
       <div className="line3">
-        <Key keyValue={"Enter"} bigKey/>
+        <Key keyValue={"ENTER"} bigKey/>
         {keys3.map((key) => {
           return <Key keyValue={key}/>
         })}
-        <Key keyValue={"Delete"} bigKey/>
+        <Key keyValue={"DELETE"} bigKey/>
       </div>
 
     </div>
