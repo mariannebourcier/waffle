@@ -11,6 +11,8 @@ export default function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0 })
 
+  const correctWord = "RIGHT"
+
   //helper functions
   const onSelectLetter = (keyValue) => {
     if (currentAttempt.letterPos > 4) return;
@@ -46,7 +48,8 @@ export default function App() {
         setCurrentAttempt,
         onSelectLetter,
         onDelete,
-        onEnter
+        onEnter,
+        correctWord
          }}>
       <Board />
       <Keyboard />
