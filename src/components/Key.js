@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../App';
-import selectLetter from './helpers/SelectLetter';
+import SelectLetter from './helpers/SelectLetter';
 
 
 export default function Key({ keyValue, bigKey }) {
@@ -29,7 +29,7 @@ export default function Key({ keyValue, bigKey }) {
 //   }
 // }
   return (
-    <div className='key' id={bigKey && "big"} onClick={selectLetter}>
+    <div className='key' id={bigKey && "big"} onClick={SelectLetter}>
       {keyValue}
     </div>
   )
