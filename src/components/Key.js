@@ -4,10 +4,6 @@ import { AppContext } from '../App';
 
 export default function Key({ keyValue, bigKey }) {
    const {
-    board,
-    setBoard, 
-    currentAttempt, 
-    setCurrentAttempt,
     onDelete,
     onEnter,
     onSelectLetter 
