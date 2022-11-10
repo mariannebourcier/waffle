@@ -38,7 +38,18 @@ export default function App() {
 
   const onEnter = () => {
     if (currentAttempt.letterPos !== 5) return;
-    setCurrentAttempt({ attempt: currentAttempt.attempt + 1, letterPos: 0 })
+    //form words with letters based on curr attempt
+    let currentWord = ""
+    for (let i = 0; i < 5; i++) {
+      currentWord += board[currentAttempt.attempt][i]
+    }
+    //check if formed word is in word bank
+    if (wordSet.has(currentWord.toLowerCase())) {
+      setCurrentAttempt({ attempt: currentAttempt.attempt + 1, letterPos: 0 })
+    } else {
+      alert("This word doesn't exist!")
+    }
+    // setCurrentAttempt({ attempt: currentAttempt.attempt + 1, letterPos: 0 })
   }
 
 
@@ -55,7 +66,7 @@ export default function App() {
         onSelectLetter,
         onDelete,
         onEnter,
-        correctWord
+        //correctWord
          }}>
       <Board />
       <Keyboard />
