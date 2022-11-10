@@ -11,7 +11,8 @@ export default function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0 })
   const [wordSet, setWordSet] = useState(new Set())
-  //const correctWord = "RIGHT"
+  const [disabledLetters, setDisabledLetters] = useState([])
+  const correctWord = "RIGHT"
 
   useEffect(() => {
     generateWordSet().then((words) => {
@@ -49,6 +50,10 @@ export default function App() {
     } else {
       alert("This word doesn't exist!")
     }
+
+    if (currentWord === correctWord) {
+      alert("You won!")
+    }
     // setCurrentAttempt({ attempt: currentAttempt.attempt + 1, letterPos: 0 })
   }
 
@@ -66,7 +71,9 @@ export default function App() {
         onSelectLetter,
         onDelete,
         onEnter,
-        //correctWord
+        correctWord,
+        disabledLetters,
+        setDisabledLetters
          }}>
       <Board />
       <Keyboard />

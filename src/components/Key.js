@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../App';
 
 
-export default function Key({ keyValue, bigKey }) {
+export default function Key({ keyValue, bigKey, disabled }) {
    const {
     onDelete,
     onEnter,
@@ -20,7 +20,7 @@ export default function Key({ keyValue, bigKey }) {
   }
 
   return (
-    <div className='key' id={bigKey && "big"} onClick={selectLetter}>
+    <div className='key' id={bigKey ? "big": disabled && "disabled"} onClick={selectLetter}>
       {keyValue}
     </div>
   )
