@@ -14,13 +14,13 @@ export default function App() {
   const [wordSet, setWordSet] = useState(new Set())
   const [disabledLetters, setDisabledLetters] = useState([])
   const [gameOver, setGameOver] = useState({gameOver: false, guessedWord:false})
+  const [correctWord, setCorrectWord] = useState("")
   
-  
-  const correctWord = "RIGHT"
 
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet)
+      setCorrectWord(words.todaysWord)
     })
   }, [])
 
