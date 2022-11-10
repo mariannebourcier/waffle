@@ -10,12 +10,12 @@ export const AppContext = createContext();
 export default function App() {
   const [board, setBoard] = useState(boardDefault);
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0 })
-
-  const correctWord = "RIGHT"
+  const [wordSet, setWordSet] = useState(new Set())
+  //const correctWord = "RIGHT"
 
   useEffect(() => {
     generateWordSet().then((words) => {
-      console.log(words);
+      setWordSet(words.wordSet)
     })
   }, [])
 
