@@ -12,6 +12,7 @@ export default function App() {
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0 })
   const [wordSet, setWordSet] = useState(new Set())
   const [disabledLetters, setDisabledLetters] = useState([])
+  const [gameOver, setGameOver] = useState({gameOver: false, guessedWord:false})
   const correctWord = "RIGHT"
 
   useEffect(() => {
@@ -73,7 +74,9 @@ export default function App() {
         onEnter,
         correctWord,
         disabledLetters,
-        setDisabledLetters
+        setDisabledLetters,
+        setGameOver,
+        gameOver
          }}>
       <Board />
       <Keyboard />
