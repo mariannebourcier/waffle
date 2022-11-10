@@ -14,7 +14,7 @@ export default function Letter({ letterPosition, attemptValue }) {
 
     useEffect(() => {
       if (letter !== "" && !correct && !almost) {
-        setDisabledLetters([...disabledLetters, letter])
+        setDisabledLetters((prev) => [...prev, letter])
       }
     }, [currentAttempt.attempt])
   return (
