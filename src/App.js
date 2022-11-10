@@ -3,6 +3,7 @@ import Board from './components/Board';
 import { boardDefault, generateWordSet } from './Words';
 import Keyboard from './components/Keyboard';
 import { createContext, useEffect, useState } from 'react';
+import GameOver from './components/GameOver';
 
 //have access to const in all components
 export const AppContext = createContext();
@@ -53,7 +54,12 @@ export default function App() {
     }
 
     if (currentWord === correctWord) {
-      alert("You won!")
+      setGameOver({gameOver:true, guessedWord:true})
+      return;
+    }
+
+    if(currentAttempt.attempt === 5) {
+      setGameOver({gameOver:true, guessedWord:false})
     }
     // setCurrentAttempt({ attempt: currentAttempt.attempt + 1, letterPos: 0 })
   }
@@ -79,7 +85,7 @@ export default function App() {
         gameOver
          }}>
       <Board />
-      <Keyboard />
+      {gameOver.gameOver ? <GameOver/>: <Keyboard />}
     
       </AppContext.Provider> 
     </div>
