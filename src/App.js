@@ -1,8 +1,8 @@
 import './App.css';
 import Board from './components/Board';
-import { boardDefault } from './components/helpers/Words';
+import { boardDefault, generateWordSet } from './Words';
 import Keyboard from './components/Keyboard';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 //have access to const in all components
 export const AppContext = createContext();
@@ -12,6 +12,12 @@ export default function App() {
   const [currentAttempt, setCurrentAttempt] = useState({ attempt: 0, letterPos: 0 })
 
   const correctWord = "RIGHT"
+
+  useEffect(() => {
+    generateWordSet().then((words) => {
+      console.log(words);
+    })
+  }, [])
 
   //helper functions
   const onSelectLetter = (keyValue) => {
