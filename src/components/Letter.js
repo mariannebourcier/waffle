@@ -5,9 +5,9 @@ export default function Letter({ letterPosition, attemptValue }) {
   const { board, correctWord, currentAttempt, disabledLetters, setDisabledLetters } = useContext(AppContext)
   const letter = board[attemptValue][letterPosition];
   //check letters against word
-  const correct = correctWord.toUpperCase()[letterPosition] === letter;
+  const correct = correctWord[letterPosition] === letter;
   const almost = 
-    !correct && letter !== "" && correctWord.toUpperCase().includes(letter);
+    !correct && letter !== "" && correctWord.includes(letter);
   const letterState = 
     currentAttempt.attempt > attemptValue &&
     (correct ? "correct" : almost ? "almost" : "error")
